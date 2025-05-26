@@ -6,19 +6,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class RegisterActivity extends AppCompatActivity {
 
 //declrations
-    EditText fullnameTv, usernameTv, emailTv, passwordTv, confirmTv;
-    TextView loginTv;
-    Button regsiterBtn;
+    private EditText fullnameTv, usernameTv, emailTv, passwordTv, confirmTv;
+    private TextView loginTv;
+    private Button regsiterBtn;
+    private DatabaseHelper dbHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +30,7 @@ public class RegisterActivity extends AppCompatActivity {
         confirmTv = findViewById(R.id.confirmPassword);
         regsiterBtn=findViewById(R.id.registrationButton);
         loginTv=findViewById(R.id.loginTv);
+       dbHelper = new DatabaseHelper(this);
 
         loginTv.setOnClickListener(view -> {
             Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
@@ -78,18 +76,19 @@ public class RegisterActivity extends AppCompatActivity {
 
             }
             else{
-//                store the record din SQLite database/Room
-
-//                intent-> new screen(move from current activity(LoginActivity.this, MainActivity.class
-                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                startActivity(intent);
-                finish();
+//                // store the record din SQLite database/Room
+                if(dbHelper.registerUser(fullname, username, email, password)){
+                    Toast.makeText(this, "User Registered Successfully!", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                    finish();
+                }
+                else{
+                    Toast.makeText(this, "Registration failed. Username or Password Already exists. Please try again", Toast.LENGTH_SHORT).show();
+                }
 
             }
 
-//            store data in database
-
-
         });
+//        login
     }
 }
