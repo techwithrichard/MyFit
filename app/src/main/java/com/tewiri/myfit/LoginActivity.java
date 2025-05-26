@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -17,6 +18,7 @@ public class LoginActivity extends AppCompatActivity {
 //    declare UI elements used in the application(Login Activity UI)
     EditText usernameEt, passwordEt;
     Button loginBtn;
+    TextView registrationLinkTv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,16 @@ public class LoginActivity extends AppCompatActivity {
         usernameEt = findViewById(R.id.usernameEtLogin);
         passwordEt=findViewById(R.id.passwordEtLogin);
         loginBtn=findViewById(R.id.loginBtn);
+        registrationLinkTv=findViewById(R.id.registerTv);
+
+
+//        use registrationLinkTv
+        registrationLinkTv.setOnClickListener(view -> {
+            Intent linktoregisteractivity = new Intent(LoginActivity.this, RegisterActivity.class);
+            startActivity(linktoregisteractivity);
+            finish();
+
+        });
 
 //        validations
 //        username, password
@@ -40,12 +52,19 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(this, "Input all credentials", Toast.LENGTH_SHORT).show();
 
             }
-            else{
-
-//                intent-> new screen(move from current activity(LoginActivity.this, MainActivity.class
+            else if(username.equals("admin") && password.equals("admin")){
+                Toast.makeText(this, "Welcome Admin", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                        startActivity(intent);
-                        finish();
+                startActivity(intent);
+                finish();
+            }
+
+            else{
+//                intent-> new screen(move from current activity(LoginActivity.this, MainActivity.class
+               Toast.makeText(this, "Invalid Credentials, please register", Toast.LENGTH_SHORT).show();
+               Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+               startActivity(intent);
+               finish();
 
             }
 
@@ -54,18 +73,5 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
-
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
     }
 }

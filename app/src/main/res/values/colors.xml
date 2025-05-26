@@ -3,4 +3,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="logoColor">#4f16f3</color>
+    <color name="linkTextViewColor">#0f54ef</color>
 </resources>
