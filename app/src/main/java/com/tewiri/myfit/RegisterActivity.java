@@ -14,7 +14,7 @@ public class RegisterActivity extends AppCompatActivity {
 //declrations
     private EditText fullnameTv, usernameTv, emailTv, passwordTv, confirmTv;
     private TextView loginTv;
-    private Button regsiterBtn;
+    private Button registerBtn;
     private DatabaseHelper dbHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class RegisterActivity extends AppCompatActivity {
         emailTv=findViewById(R.id.emailEtRegister);
         passwordTv=findViewById(R.id.passwordEtRegister);
         confirmTv = findViewById(R.id.confirmPassword);
-        regsiterBtn=findViewById(R.id.registrationButton);
+        registerBtn=findViewById(R.id.registrationButton);
         loginTv=findViewById(R.id.loginTv);
        dbHelper = new DatabaseHelper(this);
 
@@ -38,7 +38,7 @@ public class RegisterActivity extends AppCompatActivity {
             finish();
         });
 
-        regsiterBtn.setOnClickListener(view -> {
+        registerBtn.setOnClickListener(view -> {
             String fullname = fullnameTv.getText().toString().trim();
             String username = usernameTv.getText().toString().trim();
             String email = emailTv.getText().toString().trim();

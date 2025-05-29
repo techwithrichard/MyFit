@@ -1,61 +1,51 @@
 <resources>
-<!--   registration/login labels-->
+    <!-- Existing strings from your provided strings.xml -->
     <string name="username">Username</string>
     <string name="login">Login</string>
     <string name="password">Password</string>
     <string name="logoDescription">This is for the logo</string>
     <string name="register">Register</string>
-    <string name="email">Email</string>
+    <string name="email">EmailAddress</string>
     <string name="full_name">Your Full Name</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="already_member">Already a member? Login</string>
-    <string name="notRegistered">Not a member? Register</string>
-
-    <!-- App Info -->
+    <string name="notRegistered">Email is required</string>
     <string name="app_name">MyFit</string>
     <string name="splash_tagline">The Future of Fitness</string>
-
-    <!-- Onboarding -->
     <string name="onboarding_title1">Welcome to MyFit 3.0</string>
     <string name="onboarding_subtitle1">AI-powered fitness for the next generation</string>
-
     <string name="onboarding_title2">Your Unique Fitness DNA</string>
     <string name="onboarding_subtitle2">We analyze 127 biomarkers for perfect workouts</string>
-
-    <string name="onboarding_title3">Let\'s Build Your Future Body</string>
+    <string name="onboarding_title3">Welcome to MyFitness</string>
     <string name="onboarding_subtitle3">Get started with your personalized plan</string>
-
-    <!-- Buttons -->
-    <string name="next">Next</string>
+    <string name="next">Next </string>
     <string name="get_started">Begin</string>
     <string name="skip">Skip</string>
-
-    <!-- Registration -->
     <string name="action_register">CREATE ACCOUNT</string>
-    <string name="hint_email">Email</string>
+    <string name="hint_email">EmailAddress</string>
     <string name="hint_password">Password</string>
     <string name="hint_confirm_password">Confirm Password</string>
     <string name="error_email_required">Email is required</string>
-    <string name="error_invalid_email">Enter a valid email</string>
+    <string name="error_invalid_email">Enter a valid email address</string>
+    <string name="error_password">Password is required</string>
+    <string name="error_password_short">Password must be at least 6 characters long</string>
+    <string name="error_password_mismatch">Passwords do not match</string>
+    <string name="error_login_failed">Login failed. Check your credentials.</string>
     <string name="error_password_required">Password is required</string>
-    <string name="error_password_short">Password must be at least 6 characters</string>
-    <string name="error_password_mismatch">Passwords don\'t match</string>
+    <string name="error_fullname_required">Full name is required</string> <!-- Added -->
+    <string name="error_username_required">Username is required</string> <!-- Added -->
+    <string name="success_registration">User Registered Successfully!</string> <!-- Added -->
+    <string name="error_registration_failed">Registration failed. Username or email already exists.</string> <!-- Added -->
     <string name="already_have_account">Already have an account? Login</string>
     <string name="or">OR</string>
-
-    <!-- Login -->
     <string name="action_login">LOGIN</string>
     <string name="use_biometric">Use Fingerprint</string>
-    <string name="forgot_password">Forgot Password?</string>
-    <string name="dont_have_account">Don\'t have an account? Register</string>
-    <string name="biometric_login_title">Biometric Login</string>
-    <string name="biometric_login_subtitle">Authenticate to continue</string>
+    <string name="forgot_password">Forgotten Password?</string>
+    <string name="dont_have_account">Don\'t have an account?</string>
+    <string name="biometric_login">Biometric Login</string>
+    <string name="biometric_password">Biometric Authentication</string>
     <string name="cancel">Cancel</string>
-
     <string name="dna">DNA symbolizing health tracking</string>
-
-<!--    Dashboard-->
     <string name="dashboard">MyFit Dashboard</string>
     <string name="logout">Logout</string>
-
 </resources>
