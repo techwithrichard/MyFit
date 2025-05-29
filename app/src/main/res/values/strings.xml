@@ -11,4 +11,6 @@
     <string name="already_member">Already a member? Login</string>
     <string name="notRegistered">Not a member? Register</string>
 
+    <string name="splash_tagline">The Future of Fitness</string>
+
 </resources>

@@ -1,0 +1,22 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- M Letter -->
+    <path
+        android:fillColor="@color/neon_green"
+        android:pathData="M40,50 L40,150 L70,90 L100,150 L100,50 L80,50 L80,120 L70,100 L60,120 L60,50 Z" />
+
+    <!-- Y Letter -->
+    <path
+        android:fillColor="@color/electric_blue"
+        android:pathData="M110,50 L140,100 L140,50 L160,50 L160,150 L140,150 L140,110 L110,150 L90,150 L120,110 L120,50 Z" />
+
+    <!-- Glow Effect -->
+    <path
+        android:fillColor="@color/white"
+        android:fillAlpha="0.2"
+        android:pathData="M30,40 Q100,0 170,40 L170,160 Q100,200 30,160 Z" />
+</vector>
