@@ -1,0 +1,29 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="250dp"
+    android:height="250dp"
+    android:viewportWidth="250"
+    android:viewportHeight="250">
+
+    <!-- Watch Body -->
+    <path
+        android:fillColor="@color/dark_space"
+        android:strokeColor="@color/electric_blue"
+        android:strokeWidth="2"
+        android:pathData="M50,50 L200,50 A25,25 0 0 1 225,75 L225,175 A25,25 0 0 1 200,200 L50,200 A25,25 0 0 1 25,175 L25,75 A25,25 0 0 1 50,50 Z" />
+
+    <!-- Screen -->
+    <path
+        android:fillColor="#1AFFFFFF"
+        android:pathData="M60,70 L190,70 L190,180 L60,180 Z" />
+
+    <!-- Heart Rate Line -->
+    <path
+        android:strokeColor="@color/neon_green"
+        android:strokeWidth="3"
+        android:pathData="M70,120 Q80,90 90,120 Q100,150 110,120 Q120,90 130,120 Q140,150 150,120 Q160,90 170,120 Q180,150 190,120" />
+
+    <!-- Side Button -->
+    <path
+        android:fillColor="@color/electric_blue"
+        android:pathData="M225,100 L235,90 L235,110 Z" />
+</vector>

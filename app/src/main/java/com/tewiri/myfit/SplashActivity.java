@@ -34,7 +34,7 @@ public class SplashActivity extends AppCompatActivity {
         loading.startAnimation(pulse);
 
         new Handler().postDelayed(() -> {
-            Intent intent = new Intent(SplashActivity.this, RegisterActivity.class);
+            Intent intent = new Intent(SplashActivity.this, OnboardingActivity.class);
             startActivity(intent);
             finish();
         }, SPLASH_DURATION);
