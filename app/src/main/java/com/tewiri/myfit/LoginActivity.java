@@ -9,9 +9,7 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -57,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
             }
             if(username.equals("admin") && password.equals("admin")){
                 Toast.makeText(this, "Welcome Admin", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
                 startActivity(intent);
                 finish();
                 return;
@@ -66,7 +64,7 @@ public class LoginActivity extends AppCompatActivity {
             boolean loginSuccessful = databaseHelper.checkUser(username, password);
             if(loginSuccessful){
                 Toast.makeText(this, "Login Successful!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
 //                pass username to main activity to be able display profile username
                 intent.putExtra("username", username);
                 startActivity(intent);

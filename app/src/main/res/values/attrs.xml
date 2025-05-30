@@ -1,0 +1,6 @@
+<!-- res/values/attrs.xml -->
+<resources>
+    <attr name="statIcon" format="reference" />
+    <attr name="statTitle" format="string" />
+    <attr name="statValue" format="string" />
+</resources>

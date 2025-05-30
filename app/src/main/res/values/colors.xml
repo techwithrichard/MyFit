@@ -23,4 +23,27 @@
     <!--    coral red-->
 
     <color name="coral_red">#FF6F61</color>
+
+    <!-- Add to your colors.xml -->
+    <!-- Primary Color Variations -->
+    <color name="electric_blue_light">#66D8FF</color>
+    <color name="electric_blue_dark">#0095CC</color>
+    <color name="neon_green_dark">#00CC83</color>
+
+    <!-- Surface Colors -->
+    <color name="surface_primary">#121828</color> <!-- Slightly lighter than dark_space -->
+    <color name="surface_secondary">#1E2235</color>
+    <color name="surface_tertiary">#2A2F45</color>
+
+    <!-- Semantic Colors -->
+    <color name="success">@color/neon_green</color>
+    <color name="warning">#FFC107</color> <!-- Amber -->
+    <color name="error">@color/coral_red</color>
+
+    <!-- Chart Colors -->
+    <color name="chart_primary">@color/electric_blue</color>
+    <color name="chart_secondary">@color/neon_green</color>
+    <color name="chart_tertiary">#FF6F61</color> <!-- Coral red -->
+
+
 </resources>
