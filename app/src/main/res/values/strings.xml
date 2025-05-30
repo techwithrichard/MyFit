@@ -36,7 +36,7 @@
     <string name="error_username_required">Username is required</string> <!-- Added -->
     <string name="success_registration">User Registered Successfully!</string> <!-- Added -->
     <string name="error_registration_failed">Registration failed. Username or email already exists.</string> <!-- Added -->
-    <string name="already_have_account">Already have an account? Login</string>
+    <string name="already_have_account">Already have an account?</string>
     <string name="or">OR</string>
     <string name="action_login">LOGIN</string>
     <string name="use_biometric">Use Fingerprint</string>
@@ -48,4 +48,7 @@
     <string name="dna">DNA symbolizing health tracking</string>
     <string name="dashboard">MyFit Dashboard</string>
     <string name="logout">Logout</string>
+    <string name="welcome_back">Welcome back!</string>
+    <string name="not_a_member">Not a member yet?</string>
+
 </resources>

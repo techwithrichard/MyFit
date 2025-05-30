@@ -19,6 +19,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText usernameEt, passwordEt;
     Button loginBtn;
     TextView registrationLinkTv;
+    DatabaseHelper databaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,8 @@ public class LoginActivity extends AppCompatActivity {
         passwordEt=findViewById(R.id.passwordEtLogin);
         loginBtn=findViewById(R.id.loginBtn);
         registrationLinkTv=findViewById(R.id.registerTv);
+        // Initialize database helper
+        databaseHelper = new DatabaseHelper(this);
 
 
 //        use registrationLinkTv
@@ -43,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
 
 //        validations
 //        username, password
-//        login
+//        login button clicked handler
         loginBtn.setOnClickListener(view -> {
             String username = usernameEt.getText().toString().trim();
             String password = passwordEt.getText().toString().trim();
@@ -52,26 +55,32 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(this, "Input all credentials", Toast.LENGTH_SHORT).show();
 
             }
-            else if(username.equals("admin") && password.equals("admin")){
+            if(username.equals("admin") && password.equals("admin")){
                 Toast.makeText(this, "Welcome Admin", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
+                return;
             }
-
-            else{
+//            check credentials
+            boolean loginSuccessful = databaseHelper.checkUser(username, password);
+            if(loginSuccessful){
+                Toast.makeText(this, "Login Successful!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+//                pass username to main activity to be able display profile username
+                intent.putExtra("username", username);
+                startActivity(intent);
+                finish();
+            } else{
 //                intent-> new screen(move from current activity(LoginActivity.this, MainActivity.class
                Toast.makeText(this, "Invalid Credentials, please register", Toast.LENGTH_SHORT).show();
-               Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-               startActivity(intent);
-               finish();
-
             }
-
-
         });
 
-
-
+    }
+    @Override
+    protected void onDestroy() {
+        databaseHelper.close();
+        super.onDestroy();
     }
 }

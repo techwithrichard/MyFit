@@ -19,8 +19,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/logo1"
-        app:tint="@color/logoColor" />
+        app:srcCompat="@drawable/logo1"/>
+<!--        app:tint="@color/logoColor" -->
+
 
     <!-- Title -->
     <TextView
@@ -182,6 +183,7 @@
             android:minHeight="48dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
+
     <!-- Register Button -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/registrationButton"
@@ -199,17 +201,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Already a Member -->
-    <TextView
-        android:id="@+id/loginTv"
+    <!-- Already a Member - Updated to match login style -->
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/already_have_account"
-        android:textColor="@color/linkTextViewColor"
-        android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@id/registrationButton"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/registrationButton">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/already_have_account"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/loginTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="@string/login"
+            android:textColor="@color/linkTextViewColor"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
